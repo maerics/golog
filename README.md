@@ -20,6 +20,8 @@ The `Debug{,f}` functions do nothing unless the `DEBUG` environment variable is 
 
 The `Fatal{,f}` functions exit the process with exit code 1 after printing their messages.
 
+The `Must{,1,2,3}` functions log a fatal error if the given error is not nil, returning the corresponding number of additional arguments.
+
 # Error reporting
 
 TODO
