@@ -11,7 +11,9 @@ Each log line is prefixed with its RFC3339 timestamp in UTC with millisecond res
 The `Debug`, `Error`, and `Fatal` functions print to stderr their respective levels in all caps before the given message.
 
 ```
-2022-12-11T20:06:33.886Z | ERROR: something bad happened.
+2022-12-11T20:06:33.886Z | DEBUG: only prints if the "DEBUG" env var is set.
+2022-12-11T20:06:33.886Z | ERROR: see also "Err{,f}" for error types.
+2022-12-11T20:06:33.886Z | FATAL: exits the process with code 1.
 ```
 
 The `...f` variants of the above functions treat the message as a format string and take variable arguments.
