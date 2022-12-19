@@ -23,13 +23,13 @@ var logdebug = (func() func(string) {
 	return func(string) {}
 })()
 
-var logdebugf = (func() func(string, ...interface{}) {
+var logdebugf = (func() func(string, ...any) {
 	if debug {
-		return func(message string, args ...interface{}) {
+		return func(message string, args ...any) {
 			log.Printf("DEBUG: "+message, args...)
 		}
 	}
-	return func(string, ...interface{}) {}
+	return func(string, ...any) {}
 })()
 
 func init() {
@@ -41,7 +41,7 @@ func Debug(message string) {
 	logdebug(message)
 }
 
-func Debugf(message string, args ...interface{}) {
+func Debugf(message string, args ...any) {
 	logdebugf(message, args...)
 }
 
@@ -49,7 +49,7 @@ func Print(message string) {
 	log.Print(message)
 }
 
-func Printf(message string, args ...interface{}) {
+func Printf(message string, args ...any) {
 	log.Printf(message, args...)
 }
 
@@ -65,7 +65,7 @@ func Error(message string) {
 	log.Printf("ERROR: " + message)
 }
 
-func Errorf(message string, args ...interface{}) {
+func Errorf(message string, args ...any) {
 	log.Printf("ERROR: "+message, args...)
 }
 
@@ -73,7 +73,7 @@ func Fatal(message string) {
 	log.Fatal("FATAL: " + message)
 }
 
-func Fatalf(message string, args ...interface{}) {
+func Fatalf(message string, args ...any) {
 	log.Fatalf("FATAL: "+message, args...)
 }
 
