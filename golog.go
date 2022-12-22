@@ -62,7 +62,7 @@ func Err(err error) {
 }
 
 func Error(message string) {
-	log.Printf("ERROR: " + message)
+	log.Print("ERROR: " + message)
 }
 
 func Errorf(message string, args ...any) {
