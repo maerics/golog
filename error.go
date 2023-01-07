@@ -25,3 +25,7 @@ func Fatal(message string) {
 func Fatalf(message string, args ...any) {
 	log.Fatalf("FATAL: "+message, args...)
 }
+
+func Fatale(err error) {
+	log.Fatal("FATAL: " + err.Error())
+}
